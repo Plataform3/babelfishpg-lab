@@ -1,0 +1,34 @@
+services:
+  bbf:
+    container_name: babelfishpg
+    image: ghcr.io/plataform3/babelfish-on-docker:latest
+    ports:
+      # Port forwarding not supported by BabelfishPG
+      - 1433:1433
+      - 15432:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - BABELFISH_USER=bbf
+      - BABELFISH_PASS=password
+      - BABELFISH_DB=bbf
+      - BABELFISH_MIGRATION_MODE=multi-db
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    command: >
+      postgres -c babelfishpg_tsql.trace_exec_time="on"
+               -c babelfishpg_tsql.trace_exec_codes="on" 
+               -c logging_collector="on"
+               -c babelfishpg_tds.tds_debug_log_level="2"
+               -c babelfishpg_tsql.explain_timing="on"
+               -c babelfishpg_tsql.explain_summary="on"
+               -c babelfishpg_tsql.showplan_text="on"
+               -c log_min_duration_statement=1000
+               -c babelfishpg_tsql.enable_tsql_information_schema="on"
+               -c listen_addresses="*"
+               -c babelfishpg_tds.listen_addresses="on"
+    networks:
+      - babelfish
+
+networks:
+  babelfish:
