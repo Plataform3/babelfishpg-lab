@@ -22,7 +22,12 @@ For logging into Babelfish (password is `password`):
 tsql -H localhost -p 1433 -U bbf bff
 ```
 
-You can copy/paste the SQL code in [Babelfish loose contributions](https://tr3s.ma/toolbox/2024/babelfish-on-docker/) for testing.
+Helper scripts based in the SQL code at [Babelfish loose contributions](https://tr3s.ma/toolbox/2024/babelfish-on-docker/) for testing.
+
+```bash
+scripts/init.sh
+scripts/show_logs.sh
+```
 
 
 Explain supported in TDS:

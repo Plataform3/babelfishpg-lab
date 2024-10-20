@@ -18,6 +18,7 @@ services:
     command: >
       postgres -c babelfishpg_tsql.trace_exec_time="on"
                -c babelfishpg_tsql.trace_exec_codes="on" 
+               -c babelfishpg_tsql.trace_exec_counts="on" 
                -c logging_collector="on"
                -c babelfishpg_tds.tds_debug_log_level="2"
                -c babelfishpg_tsql.explain_timing="on"
