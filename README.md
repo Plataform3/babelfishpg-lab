@@ -24,3 +24,12 @@ tsql -H localhost -p 1433 -U bbf bff
 
 You can copy/paste the SQL code in [Babelfish loose contributions](https://tr3s.ma/toolbox/2024/babelfish-on-docker/) for testing.
 
+
+Explain supported in TDS:
+
+```sql
+set babelfish_showplan_all on
+GO
+<query>
+GO
+```
