@@ -29,6 +29,11 @@ scripts/init.sh
 scripts/show_logs.sh
 ```
 
+Execute queries, see [SQLs](SQLS.md):
+
+```bash
+scripts/tdscli.sh master
+```
 
 Explain supported in TDS:
 
