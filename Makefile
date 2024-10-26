@@ -15,4 +15,5 @@ down:
 bbf:
 	@docker compose exec -it -u postgres bbf psql bbf
 
-
+ssh:
+	@docker compose exec -it bbf bash

@@ -33,6 +33,21 @@ services:
     volumes:
       - bbfdata:/var/lib/postgresql/data
       # - ./docker/bbf:/docker-entrypoint-initdb.d
+  
+  ## WIP
+  # tsql:
+  #   container_name: tsql
+  #   build:
+  #     context: ./docker/tsql/
+  #     dockerfile: Dockerfile
+  #   depends_on:
+  #     - bbf
+  #   command: >
+  #     sleep 10 && /usr/bin/001_init.sh 
+  #   networks:
+  #     - babelfish
+  #   volumes:
+  #     - ./docker/bbf/001_init.sh:/usr/bin/001_init.sh
 
 volumes:
   bbfdata:

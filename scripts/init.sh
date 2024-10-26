@@ -4,11 +4,6 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 . ${SCRIPTPATH}/lib.sh
 
-# tdscli() {
-#   docker compose exec -T bbf tsql -H localhost -p 1433 -P password -U bbf <<EOF
-# $1
-# EOF
-# }
 
 initsql=$(cat <<'EOF'
 IF EXISTS (SELECT 1

@@ -1,10 +1,12 @@
 #!/bin/bash
 
 tdscli() {
-  tsql -H localhost -p 1433 -P password -U bbf master 2> /dev/null <<EOF
+  tsql -S bbf -p 1433 -P password -U bbf master  <<EOF
 ${1}
 EOF
 }
+# -o qhf 
+# 2>&1 /dev/null
 
 initsql=$(cat <<'EOF'
 IF EXISTS (SELECT 1
