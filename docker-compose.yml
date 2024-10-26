@@ -30,9 +30,13 @@ services:
                -c listen_addresses="*"
     networks:
       - babelfish
-    # volumes:
-    #   - ./bbfdata:/var/lib/postgresql/data
+    volumes:
+      - bbfdata:/var/lib/postgresql/data
       # - ./docker/bbf:/docker-entrypoint-initdb.d
+
+volumes:
+  bbfdata:
+    driver: local
 
 networks:
   babelfish:

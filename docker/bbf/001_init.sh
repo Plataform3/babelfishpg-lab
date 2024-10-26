@@ -1,8 +1,8 @@
 #!/bin/bash
 
 tdscli() {
-  tsql -H localhost -p 1433 -P password -U bbf <<EOF
-$1
+  tsql -H localhost -p 1433 -P password -U bbf master 2> /dev/null <<EOF
+${1}
 EOF
 }
 
@@ -118,4 +118,6 @@ GO
 EOF
 )
 
-tdscli "$initsql"
+sleep 4 # wait bbf to start
+
+tdscli "${initsql}" && exit 0

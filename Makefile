@@ -10,7 +10,7 @@ upstart:
 
 down:
 	@docker compose down -v
-	@rm -rf postgres_1*data/
+	@rm -rf bbfdata/
 
 bbf:
 	@docker compose exec -it -u postgres bbf psql bbf

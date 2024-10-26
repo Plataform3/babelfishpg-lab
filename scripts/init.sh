@@ -104,7 +104,7 @@ GO
 EXEC generate_random_users 1000;
 GO
 
-EXEC generate_random_score 50;
+EXEC generate_random_score 5000;
 GO
 
 SELECT COUNT(*) FROM Users;
